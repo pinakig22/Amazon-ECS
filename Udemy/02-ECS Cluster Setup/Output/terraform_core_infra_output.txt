@@ -1,0 +1,177 @@
+$ terraform13 plan -out="ecs-self-test.plan" -var-file="terraform.tfvars"
+Refreshing Terraform state in-memory prior to plan...
+The refreshed state will be used to calculate this plan, but will not be
+persisted to local or remote state storage.
+
+
+------------------------------------------------------------------------
+
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # module.vpc.aws_internet_gateway.this[0] will be created
+  + resource "aws_internet_gateway" "this" {
+      + arn      = (known after apply)
+      + id       = (known after apply)
+      + owner_id = (known after apply)
+      + tags     = {
+          + "Environment" = "ecs-training"
+          + "Name"        = "ecsStudy"
+          + "Terraform"   = "true"
+        }
+      + tags_all = {
+          + "Environment" = "ecs-training"
+          + "Name"        = "ecsStudy"
+          + "Terraform"   = "true"
+        }
+      + vpc_id   = (known after apply)
+    }
+
+  # module.vpc.aws_route.public_internet_gateway[0] will be created
+  + resource "aws_route" "public_internet_gateway" {
+      + destination_cidr_block = "0.0.0.0/0"
+      + gateway_id             = (known after apply)
+      + id                     = (known after apply)
+      + instance_id            = (known after apply)
+      + instance_owner_id      = (known after apply)
+      + network_interface_id   = (known after apply)
+      + origin                 = (known after apply)
+      + route_table_id         = (known after apply)
+      + state                  = (known after apply)
+
+      + timeouts {
+          + create = "5m"
+        }
+    }
+
+  # module.vpc.aws_route_table.public[0] will be created
+  + resource "aws_route_table" "public" {
+      + arn              = (known after apply)
+      + id               = (known after apply)
+      + owner_id         = (known after apply)
+      + propagating_vgws = (known after apply)
+      + route            = (known after apply)
+      + tags             = {
+          + "Environment" = "ecs-training"
+          + "Name"        = "ecsStudy"
+          + "Terraform"   = "true"
+        }
+      + tags_all         = {
+          + "Environment" = "ecs-training"
+          + "Name"        = "ecsStudy"
+          + "Terraform"   = "true"
+        }
+      + vpc_id           = (known after apply)
+    }
+
+  # module.vpc.aws_route_table_association.public[0] will be created
+  + resource "aws_route_table_association" "public" {
+      + id             = (known after apply)
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # module.vpc.aws_subnet.public[0] will be created
+  + resource "aws_subnet" "public" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "ap-south-1a"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "172.16.3.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = true
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + tags                                           = {
+          + "Environment" = "ecs-training"
+          + "Name"        = "ecsStudy"
+          + "Terraform"   = "true"
+        }
+      + tags_all                                       = {
+          + "Environment" = "ecs-training"
+          + "Name"        = "ecsStudy"
+          + "Terraform"   = "true"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # module.vpc.aws_vpc.this[0] will be created
+  + resource "aws_vpc" "this" {
+      + arn                              = (known after apply)
+      + assign_generated_ipv6_cidr_block = false
+      + cidr_block                       = "172.16.0.0/16"
+      + default_network_acl_id           = (known after apply)
+      + default_route_table_id           = (known after apply)
+      + default_security_group_id        = (known after apply)
+      + dhcp_options_id                  = (known after apply)
+      + enable_classiclink               = (known after apply)
+      + enable_classiclink_dns_support   = (known after apply)
+      + enable_dns_hostnames             = false
+      + enable_dns_support               = true
+      + id                               = (known after apply)
+      + instance_tenancy                 = "default"
+      + ipv6_association_id              = (known after apply)
+      + ipv6_cidr_block                  = (known after apply)
+      + main_route_table_id              = (known after apply)
+      + owner_id                         = (known after apply)
+      + tags                             = {
+          + "Environment" = "ecs-training"
+          + "Name"        = "ecsStudy"
+          + "Terraform"   = "true"
+        }
+      + tags_all                         = {
+          + "Environment" = "ecs-training"
+          + "Name"        = "ecsStudy"
+          + "Terraform"   = "true"
+        }
+    }
+
+Plan: 6 to add, 0 to change, 0 to destroy.
+
+------------------------------------------------------------------------
+
+This plan was saved to: ecs-self-test.plan
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "ecs-self-test.plan"
+
+
+pghosh@TADLPT008 MINGW64 ~/Desktop/Amazon-ECS/Udemy/02-ECS Cluster Setup/Code/Terraform (main)
+$ terraform13 apply "ecs-self-test.plan
+> ^C
+
+pghosh@TADLPT008 MINGW64 ~/Desktop/Amazon-ECS/Udemy/02-ECS Cluster Setup/Code/Terraform (main)
+$ terraform13 apply "ecs-self-test.plan"
+module.vpc.aws_vpc.this[0]: Creating...
+module.vpc.aws_vpc.this[0]: Creation complete after 2s [id=vpc-02d0ef88622ec93b5]
+module.vpc.aws_internet_gateway.this[0]: Creating...
+module.vpc.aws_route_table.public[0]: Creating...
+module.vpc.aws_subnet.public[0]: Creating...
+module.vpc.aws_route_table.public[0]: Creation complete after 0s [id=rtb-0911adb9f2ebe09e5]
+module.vpc.aws_internet_gateway.this[0]: Creation complete after 0s [id=igw-0609255f71b1c859a]
+module.vpc.aws_route.public_internet_gateway[0]: Creating...
+module.vpc.aws_route.public_internet_gateway[0]: Creation complete after 1s [id=r-rtb-0911adb9f2ebe09e51080289494]
+module.vpc.aws_subnet.public[0]: Still creating... [10s elapsed]
+module.vpc.aws_subnet.public[0]: Creation complete after 11s [id=subnet-0b8598feb502e7289]
+module.vpc.aws_route_table_association.public[0]: Creating...
+module.vpc.aws_route_table_association.public[0]: Creation complete after 0s [id=rtbassoc-0d06c75ff506c0d56]
+
+Apply complete! Resources: 6 added, 0 changed, 0 destroyed.
+
+The state of your infrastructure has been saved to the path
+below. This state is required to modify and destroy your
+infrastructure, so keep it safe. To inspect the complete state
+use the `terraform show` command.
+
+State path: terraform.tfstate
+
+pghosh@TADLPT008 MINGW64 ~/Desktop/Amazon-ECS/Udemy/02-ECS Cluster Setup/Code/Terraform (main)
+$
