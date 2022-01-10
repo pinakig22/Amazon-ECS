@@ -1,3 +1,7 @@
+## VPC Name
+variable vpc_name {
+  description = "Name of VPC"
+}
 ## Region
 variable "region" {
   description = "The AWS region your resources will be deployed"

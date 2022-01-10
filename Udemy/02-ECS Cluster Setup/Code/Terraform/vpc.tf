@@ -3,12 +3,13 @@ module "vpc" {
     name = "my-ecs-vpc"
     azs = var.az
     cidr = var.vpc_cidr
-    #private_subnets =
+    # private_subnets =
     public_subnets = var.public_subnet
 
     tags = {
         Terraform = "true"
         Environment = "ecs-training"
+        Name = var.vpc_name
     }
     
 }

@@ -1,3 +1,6 @@
+# VPC Name
+vpc_name = "ecsStudy"
+
 # Region
 region = "ap-south-1"
 
