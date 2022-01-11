@@ -42,5 +42,7 @@
     - They are supported by `tasks` **hosted on** both **Fargate** and **EC2** instances.
     - Each `service` can **serve traffic from multiple load balancers** and **expose** multiple **load balanced ports by specifying multiple target groups**. (`Dynamic port forwarding`)
     - Application Load Balancers support **path-based routing** and **priority rules** (so that ***multiple** `services` can use the **same** `listener port` on a **single** Application Load Balancer*).
-  - asdfaf
-  - 
+  
+    ![image](https://user-images.githubusercontent.com/36029504/148967698-65d65c57-66c1-439d-897a-cb0bf9aae99e.png)
+
+   
