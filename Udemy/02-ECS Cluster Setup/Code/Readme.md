@@ -11,4 +11,7 @@
 
 ## EC2 Based Setup
 
+![image](https://user-images.githubusercontent.com/36029504/148889969-ed6c33dd-ea2c-4f22-b9f4-7be454d88848.png)
+
+
 ## Fargate Setup
