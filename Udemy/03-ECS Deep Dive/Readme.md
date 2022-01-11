@@ -28,6 +28,7 @@
 - **Allows each tasks** to have a **specific** role, and they will be allowing your **tasks to perform specific actions** on other services such as Amazon S3 bucket.
 - Can use **different `Task roles` for different `ESC Services`**.
 - `Task Role` is **defined** in **`task definition`**.
-- 
+
+  ![image](https://user-images.githubusercontent.com/36029504/148966068-2477a3b4-e4ec-4a34-abf9-1fa3e0564b8d.png)
 
 ## ECS Service
