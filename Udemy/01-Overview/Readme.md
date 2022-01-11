@@ -21,6 +21,11 @@
    
   ![image](https://user-images.githubusercontent.com/36029504/148515260-afada574-62f6-41b5-8fa4-f0f531651514.png)
 
+## ECS EC2 vs FARGATE
+- To run containers, you have two options. You can use `ECS container instances`, or you can use `Fargate`. **Both options work** together with ECS. 
+  The following figure demonstrates the difference.
+  
+  ![image](https://user-images.githubusercontent.com/36029504/148945565-2375e765-0f27-4df3-8ddf-fd6d7da47c2f.png)
 
 ## ECS Quick Start
 
