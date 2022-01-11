@@ -15,3 +15,5 @@
 
 
 ## Fargate Setup
+![image](https://user-images.githubusercontent.com/36029504/148890712-0ab7887e-4642-40e9-945e-1d5cda518e6b.png)
+
