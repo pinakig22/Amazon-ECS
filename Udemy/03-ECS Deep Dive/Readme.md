@@ -32,3 +32,15 @@
   ![image](https://user-images.githubusercontent.com/36029504/148966068-2477a3b4-e4ec-4a34-abf9-1fa3e0564b8d.png)
 
 ## ECS Service
+- An `ECS Service` **allows you to run and maintain** a specified **number of instances of a task definition** simultaneously in an `ECS cluster`. 
+- So they **help define** ***how many tasks should be run at any point of time*** and ***how they should be run***.
+- If any of your `tasks` should **fail or stop** for any reason, the `ECS service scheduler` **launches another instance** of your` task definition` **to replace** it in order to **maintain the desired number of `tasks`** in the `service`.
+- You can **run** your `service` *behind* a **load balancer**. 
+  - The load balancer **distributes traffic** across the `tasks` that are associated with the `service`.
+  - Application Load Balancers offer several features that make them attractive for use with Amazon ECS services:
+    - Application Load Balancer, allow containers to use `dynamic host port mapping`, so that **multiple tasks from the same service** are *allowed per container instance*.
+    - They are supported by `tasks` **hosted on** both **Fargate** and **EC2** instances.
+    - Each `service` can **serve traffic from multiple load balancers** and **expose** multiple **load balanced ports by specifying multiple target groups**. (`Dynamic port forwarding`)
+    - Application Load Balancers support **path-based routing** and **priority rules** (so that ***multiple** `services` can use the **same** `listener port` on a **single** Application Load Balancer*).
+  - asdfaf
+  - 
