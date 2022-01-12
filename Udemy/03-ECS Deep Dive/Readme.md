@@ -7,7 +7,7 @@
   - **Image Name**
     - Defined within `Container Definition` while setting up Task.
       - **`Essential`**: If the `essential` parameter of a container is marked as **`true`**, the **failure of that container will stop the task**.
-  - Task Size
+  - **Task Size**
     - specify the **total** `cpu` and **`memory`** used for the task.
     - Task size is **required** for tasks using the **Fargate** launch type and is **optional** for the **EC2**.
     - Task size is **not supported** for **Windows** containers.
@@ -23,7 +23,12 @@
   - Any **data volumes** that should be used with the containers in the task.
   - The **command** the container should **run** when it is started.
   - The **logging configuration** to use for your tasks
+    
+ ### Fargate
+  ![image](https://user-images.githubusercontent.com/36029504/149049193-4ff64045-1cad-4eb5-ad5e-b2a99c824f08.png)
 
+### EC2
+ 
 - The **entire application stack** **DOES NOT need** to be on a **single** `task definition`, and in most cases it should not.
   - The application **can span** *multiple* `task definitions`. You can do this by **combining related containers** into their own `task definitions`, each representing a single component.
 
