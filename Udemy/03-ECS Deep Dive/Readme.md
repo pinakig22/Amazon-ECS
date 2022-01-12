@@ -1,6 +1,6 @@
 # Task Definitions, ECS Services & IAM Roles
 
-# ECS Task Definitions
+## ECS Task Definitions
 - To prepare your application to run on Amazon ECS, you **must create** a `task definition`. 
 - The `task definition` is a **text** file (in **`JSON` format**) that describes (metadata) one or more containers (up to a **maximum of 10**) that form your application.
 - It contains crucial information around:
