@@ -4,11 +4,19 @@
 - To prepare your application to run on Amazon ECS, you **must create** a `task definition`. 
 - The `task definition` is a **text** file (in **`JSON` format**) that describes (metadata) one or more containers (up to a **maximum of 10**) that form your application.
 - It contains crucial information around:
-  - **Image Name**.
+  - **Image Name**
+    - Defined within `Container Definition` while setting up Task.
+      - **`Essential`**: If the `essential` parameter of a container is marked as **`true`**, the **failure of that container will stop the task**.
+  - Task Size
+    - specify the **total** `cpu` and **`memory`** used for the task.
+    - Task size is **required** for tasks using the **Fargate** launch type and is **optional** for the **EC2**.
+    - Task size is **not supported** for **Windows** containers.
   - **Port binding** for Container & Host
   - Amount of **CPU & Memory** required for the task.
   - **Environment Variables**
   - **Networking Modes** to use for the containers in your task.
+    - **Fargate** `task definitions` require that the **network mode** is set to `awsvpc`. 
+    - The `awsvpc` network mode provides **each task with its own elastic network interface**. 
   - The **IAM role** that your tasks should use.
   - Any **data volumes** that should be used with the containers in the task.
   - The **command** the container should **run** when it is started.
@@ -46,3 +54,10 @@
     ![image](https://user-images.githubusercontent.com/36029504/148967698-65d65c57-66c1-439d-897a-cb0bf9aae99e.png)
 
    
+
+
+
+## References
+- [ECS Task Definition](https://docs.aws.amazon.com/AmazonECS/latest/userguide/task_definitions.html)
+- [Task definition parameters](https://docs.aws.amazon.com/AmazonECS/latest/userguide/task_definition_parameters.html)
+- [ECS Services](https://docs.aws.amazon.com/AmazonECS/latest/userguide/ecs_services.html)
