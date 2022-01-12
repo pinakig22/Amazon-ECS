@@ -41,7 +41,7 @@
     - **Task execution role**: The role that **authorizes Amazon ECS to pull private images and publish logs** for your task. This **takes the place of the EC2 Instance role when running tasks**.
     - **Compatibilities**: The **launch type** to use with your task.
   
-  - ![image](https://user-images.githubusercontent.com/36029504/148688582-1622031b-fb1d-49f5-a99a-1d41b26e083c.png)
+    ![image](https://user-images.githubusercontent.com/36029504/148688582-1622031b-fb1d-49f5-a99a-1d41b26e083c.png)
 
 - **Service**: A service **allows you to run and maintain a specified number** (the "`desired count`") **of simultaneous instances of a task definition** in an ECS cluster.
   - **Service name**
