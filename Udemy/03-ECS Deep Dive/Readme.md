@@ -17,9 +17,15 @@
   - **Networking Modes** to use for the containers in your task.
     - **Fargate** `task definitions` require that the **network mode** is set to `awsvpc`. 
     - The `awsvpc` network mode provides **each task with its own elastic network interface**. 
-    - **EC2** `task definitions` provies he following **Network mode**. If we choose **`default`**, ECS will start your container using Docker's default networking mode, which is **`Bridge` on Linux** and **`NAT` on Windows**.
+    - **EC2** `task definitions` provies the following **Network mode**. If we choose **`default`**, ECS will start your container using Docker's default networking mode, which is **`Bridge` on Linux** and **`NAT` on Windows**.
+    
+      ![image](https://user-images.githubusercontent.com/36029504/149079637-adb447a9-168b-42f9-81eb-613fc74de64c.png)
+
   - The **IAM role** that your `tasks` should use.
     - In **EC2** mode, this is **optional**, and it will use the IAM Role that is attached to EC2 instance.
+    
+      ![image](https://user-images.githubusercontent.com/36029504/149079677-a4934cce-9f99-41d6-a0d3-6010994c1440.png)
+
   - Any **data volumes** that should be used with the containers in the task.
   - The **command** the container should **run** when it is started.
   - The **logging configuration** to use for your tasks
