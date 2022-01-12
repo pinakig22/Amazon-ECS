@@ -10,14 +10,17 @@
     - You **can't run** *more than a ***single*** instantiation of a task on each host* when using `static` mapping. This is because a `static` port mapping **only allows a single container to be mapped** to port. 
     - The `bridge` network mode with a dynamic port mapping solves the problem with `static` mapping. By **not specifying a host port** in the port mapping, you can have Docker choose a **random, unused** port from the **`ephemeral` port range** and **assign it** as the `public host port` for the container.  
      
-      **`STATIC`**  
-      ![image](https://user-images.githubusercontent.com/36029504/149081955-feea0a8d-d24a-4c9e-8226-39880050a0b6.png)
+      ### `STATIC` 
+      ![image](https://user-images.githubusercontent.com/36029504/149081955-feea0a8d-d24a-4c9e-8226-39880050a0b6.png)  
 
-  
-      **`DYNAMIC`**
+      ### `DYNAMIC` 
+      
       ![image](https://user-images.githubusercontent.com/36029504/149082039-28e5bad3-3e0c-40f3-9713-ea20a91dc4b9.png)
      
   - **`host`** — The task **bypasses** Docker's built-in virtual network and **maps container ports directly to the ENI of the Amazon EC2 instance** hosting the task. As a result, you **can't run** *multiple instantiations of the same task* on a **single** EC2 instance when port mappings are used.
     - It's **not supported** when using Amazon ECS on **Fargate**.
+     
+      ![image](https://user-images.githubusercontent.com/36029504/149082492-01b3f314-9682-4d55-bc7c-b9fc8276abc3.png)
+
   
   - **`none`** — The task has no external network connectivity.
