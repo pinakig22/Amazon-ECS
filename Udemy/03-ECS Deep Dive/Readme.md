@@ -53,7 +53,16 @@
   
     ![image](https://user-images.githubusercontent.com/36029504/148967698-65d65c57-66c1-439d-897a-cb0bf9aae99e.png)
 
-   
+- **Service Type**: There are 2 types of **service type**
+  - **`Replica`**: Replica services **place and maintain a desired number of tasks across the cluster**.
+  - **`Daemon`**: Daemon service **place and maintain one copy of task on each container instance**.
+    - If a **capacity provider** is used, Daemon service type is **not supported**.
+- **Deployments**: defines the deployment type within a Service. Two types of Deployments:
+  - **Rolling Updates**: 
+    - replaces the current version of the task in the service a new version.
+    - Set `minimum healthy percentage` and `maximum healthy percentage` to control the number of service's tasks in the **RUNNING** state during deployment.
+  - **Blue/Green Deployment**
+    - Allows to **verify** the new version **before** routing production traffic to it.
 
 
 
@@ -61,3 +70,4 @@
 - [ECS Task Definition](https://docs.aws.amazon.com/AmazonECS/latest/userguide/task_definitions.html)
 - [Task definition parameters](https://docs.aws.amazon.com/AmazonECS/latest/userguide/task_definition_parameters.html)
 - [ECS Services](https://docs.aws.amazon.com/AmazonECS/latest/userguide/ecs_services.html)
+- [ECS Deployment types](https://docs.aws.amazon.com/AmazonECS/latest/userguide/deployment-types.html)
