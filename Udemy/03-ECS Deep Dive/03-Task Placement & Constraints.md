@@ -78,6 +78,8 @@
     }
   ]
   ```
+  
+  ![image](https://user-images.githubusercontent.com/36029504/149607309-d6ff04ac-e573-4e22-a953-4e7b80ab84ff.png)
 
   **The following strategy distributes tasks evenly across Availability Zones and then distributes tasks evenly across the instances within each Availability Zone.**
 
