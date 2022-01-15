@@ -13,6 +13,9 @@
     - Task size is **not supported** for **Windows** containers.
   - **Port binding** for Container & Host
   - Amount of **CPU & Memory** required for the task.
+    - `Hard` & `Soft` Memory Limit (**EC2** Launch Type)
+    - With `Hard` limit, If the container attempts to **exceed** the memory specified here, the container is **killed**. 
+    -  The **total amount of memory** reserved for **all containers within a task** must be **LOWER** than the **task memory value**, if one is specified.
   - **Environment Variables**
   - **Networking Modes** to use for the containers in your task.
     - **Fargate** `task definitions` require that the **network mode** is set to `awsvpc`. 

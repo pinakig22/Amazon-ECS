@@ -1,4 +1,5 @@
 # Task Networking
+- The networking **behavior** of Amazon ECS tasks hosted on Amazon EC2 instances is **dependent on** the `network mode` defined in the `task definition`. 
 - The following are the available **network modes**. Amazon ECS recommends using the `awsvpc` network mode unless you have a specific need to use a different network mode.
 
   ![image](https://user-images.githubusercontent.com/36029504/149079637-adb447a9-168b-42f9-81eb-613fc74de64c.png)  
