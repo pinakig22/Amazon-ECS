@@ -52,7 +52,7 @@
 ### `random`
 - Tasks are placed **randomly**.
 
-  ```
+  ```json
   "placementStrategy": [
     {
         "type": "random"
@@ -60,7 +60,87 @@
   ]
   ```
 ### `spread`
+- Tasks are placed **evenly** based on the **specified value**.
+- Accepted values are `instanceId` (or `host`, which has the same effect), or any **platform or custom attribute** that's applied to a container instance, such as `attribute:ecs.availability-zone`.
+- **Service tasks** are spread **based on the tasks from that service**. 
+  - **Standalone tasks** are spread **based on the tasks from the same task group**.
+- When the `spread` strategy is used and a **scale-in** action is taken, ECS selects tasks to **terminate** that **maintain a balance across** Availability Zones. 
+  - **Within** an Availability Zone, **tasks are selected at random**.
+- Good choise when we want to have **High Availability**
+  
+  **The following strategy distributes tasks evenly across Availability Zones.**
+
+  ```json
+  "placementStrategy": [
+    {
+        "field": "attribute:ecs.availability-zone",
+        "type": "spread"
+    }
+  ]
+  ```
+
+  **The following strategy distributes tasks evenly across Availability Zones and then distributes tasks evenly across the instances within each Availability Zone.**
+
+  ```
+  "placementStrategy": [
+    {
+        "field": "attribute:ecs.availability-zone",
+        "type": "spread"
+    },
+    {
+        "field": "instanceId",
+        "type": "spread"
+    }
+  ]
+  ```
+
+  **The following strategy distributes tasks evenly across Availability Zones and then bin packs tasks based on memory within each Availability Zone.**
+  ```
+  "placementStrategy": [
+    {
+        "field": "attribute:ecs.availability-zone",
+        "type": "spread"
+    },
+    {
+        "field": "memory",
+        "type": "binpack"
+    }
+  ]
+  ```
+
+
+## Task Placement Constraints
+- A task placement **`constraint`** is a **rule that's considered during task placement**. 
+- Task placement constraints can be specified when **either running a task** or **creating a new service**. 
+  - The task placement constraints can be **updated for existing services as well**.
+- **Examples**
+  - **Constraint types**: following types of task placement constraints:
+    - `distinctInstance`: Place each task on a **different** container instance.
+
+      ```json
+      "placementConstraints": [
+          {
+              "type": "distinctInstance"
+          }
+      ]
+      ```
+    - `memberOf`: Place tasks on container instances that **satisfy an expression** defined by *Cluster Query Language*. The `memberOf` task placement constraint can be specified with the following **actions**:
+      - Running a task
+      - Creating a new task
+      - Creating a new task defintion
+      - Creating a revision of an existing task defintion.
+  
+      
+      ```json
+      "placementConstraints": [
+          {
+              "expression": "attribute:ecs.instance-type =~ t2.*",
+              "type": "memberOf"
+          }
+      ]      
+      ```
 
 ## References
 - [ECS Task Placement](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement.html)
 - [ECS Task Placement Strategies](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html)
+- [ECS task placement constraints](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html)
