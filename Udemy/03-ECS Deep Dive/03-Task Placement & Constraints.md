@@ -25,7 +25,6 @@
   - **`UpdateService`**
   - **`RunTask`**
 
-
 ## Task Placement Strategies
 
 - Amazon ECS supports the following task placement strategies:
@@ -83,7 +82,7 @@
 
   **The following strategy distributes tasks evenly across Availability Zones and then distributes tasks evenly across the instances within each Availability Zone.**
 
-  ```
+  ```json
   "placementStrategy": [
     {
         "field": "attribute:ecs.availability-zone",
@@ -97,7 +96,7 @@
   ```
 
   **The following strategy distributes tasks evenly across Availability Zones and then bin packs tasks based on memory within each Availability Zone.**
-  ```
+  ```json
   "placementStrategy": [
     {
         "field": "attribute:ecs.availability-zone",
