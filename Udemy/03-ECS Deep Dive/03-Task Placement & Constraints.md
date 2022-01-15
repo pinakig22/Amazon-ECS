@@ -45,6 +45,9 @@
     }
   ]
   ```
+  So we can see here, if we had two EC2 instances or a cluster `binpack`, we'll try to **cram** all the task on the one instance before going on to the other.
+  
+  ![image](https://user-images.githubusercontent.com/36029504/149606906-97483f36-044b-4e87-a901-9dce2a38ce3b.png)
 
 ### `random`
 - Tasks are placed **randomly**.
