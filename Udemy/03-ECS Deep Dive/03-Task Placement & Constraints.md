@@ -17,3 +17,5 @@
   - Identify the instances that **satisfy** the *task placement `constraints`*.
   - Identify the instances that **satisfy** the *task placement `strategies`*.
   - **Select the instances** for task placement.
+
+  ![image](https://user-images.githubusercontent.com/36029504/149605888-936a3908-57d0-41d9-b713-bda3b428d7b3.png)
