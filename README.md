@@ -4,6 +4,4 @@
 # Amazon ECS (Elastic Container Service)
 Learn ECS &amp; Fargate, Load Balancing, Auto Scaling, ECR, CICD for ECS, Blue/Green, X-Ray, Service Discovery, App Mesh
 
-These are self notes from Udemy Course [Amazon EKS Starter: Docker on AWS EKS with Kubernetes](https://www.udemy.com/course/amazon-eks-starter-kubernetes-on-aws/) by Paulo Dichone
-
-**Code Download**: [Amazon ECS & Fargate Master Class Code Download](https://courses.datacumulus.com/downloads/amazon-ecs-95g/)
+These are self notes from Udemy Course [Amazon EKS Starter: Docker on AWS EKS with Kubernetes](https://www.udemy.com/course/amazon-eks-starter-kubernetes-on-aws/) by Paulo Dichone.
